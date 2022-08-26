@@ -1,0 +1,123 @@
+{% ckan_extends %}
+
+{% block package_metadata_fields %}
+
+  {% block package_metadata_fields_custom %}
+
+    {{ form.input('doi', label=_('DOI'), id='field-doi', placeholder=_('http://dx.doi.org/'), value=data.doi, error=errors.doi, classes=['control-medium']) }}
+
+    {{ form.input('citation', label=_('Citation'), id='field-citation', placeholder=_(''), value=data.citation, error=errors.citation, classes=['control-medium']) }}
+
+    {{ form.input('geographic_coverage', label=_('Geographical Coverage Location'), id='field-geographic_coverage', placeholder=_(''), value=data.geographic_coverage, error=errors.geographic_coverage, classes=['control-medium']) }}
+
+    {{ form.input('granularity', label=_('Granularity'), id='field-granularity', placeholder=_(''), value=data.granularity, error=errors.granularity, classes=['control-medium']) }}
+
+    {{ form.input('geographic_spatial', label=_('Geographic Spatial data'), id='field-geographic_spatial', placeholder=_(''), value=data.geographic_spatial, error=errors.geographic_spatial, classes=['control-medium']) }}
+
+    <!-- {{ form.input('wkt', label=_('WKT'), id='field-wkt', placeholder=_(''), value=data.wkt, error=errors.wkt, classes=['control-medium']) }} -->
+
+  {% endblock %}
+
+  <div class="form-group control-medium">
+    <div class="control-group">
+      <label class="control-label" for="field-frequency">{{ _("Frequency") }}</label>
+      <div class="controls">
+        <div class="row">
+          <div class="col-md-6">
+            <select id="field-frequency" name="frequency" data-module="autocomplete">
+              {% for fq_id, freq in h.get_vocab_tag_list('Frequency') %}
+                <option value="{{ freq }}" {% if freq in data.get('frequency', []) %}selected="selected"{% endif %}>{{ freq }}</option>
+              {% endfor %}
+            </select>
+            {% if error %}<span class="error-block">{{ error }}</span>{% endif %}
+          </div>
+          <div class="col-md-6">
+            <span class="info-block info-inline">              
+            </span>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group control-medium">
+    <div class="control-group">
+      <label class="control-label" for="field-year">{{ _("Year") }}</label>
+      <div class="controls">
+        <div class="row">
+          <div class="col-md-6">
+            <select id="field-year" name="years" data-module="autocomplete" multiple>
+              {% for yr_id, year in h.get_vocab_tag_list('Year') %}
+                <option value="{{ year }}" {% if year in data.get('years', []) %}selected="selected"{% endif %}>{{ year }}</option>
+              {% endfor %}
+            </select>
+            {% if error %}<span class="error-block">{{ error }}</span>{% endif %}
+          </div>
+          <div class="col-md-6">
+            <span class="info-block info-inline">              
+            </span>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="form-group control-medium">
+    <div class="control-group">
+      <label class="control-label" for="field-topics">{{ _("Topics") }}</label>
+      <div class="controls">
+        <select id="field-topics" name="topics" data-module="autocomplete" multiple>
+          {% for tp_id, topic in h.get_vocab_tag_list('Topics') %}
+            <option value="{{ topic }}" {% if topic in data.get('topics', []) %}selected="selected"{% endif %}>{{ topic }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="form-group control-medium">
+    <div class="control-group">
+      <label class="control-label" for="field-units">{{ _("Units") }}</label>
+      <div class="controls">
+        <select id="field-units" name="units" data-module="autocomplete" multiple>
+          {% for unit_id, unit in h.get_vocab_tag_list('Unit') %}
+            <option value="{{ unit }}" {% if unit in data.get('units', []) %}selected="selected"{% endif %}>{{ unit }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="form-group control-medium">
+    <div class="control-group">
+      <label class="control-label" for="field-area_type">{{ _("Geographic Layer") }}</label>
+      <div class="controls">
+        <select id="field-area_type" name="area_types" data-module="autocomplete" multiple>
+          {% for at_id, area_type in h.get_vocab_tag_list('Area_type') %}
+            <option value="{{ area_type }}" {% if area_type in data.get('area_types', []) %}selected="selected"{% endif %}>{{ area_type }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+  </div>
+
+  {% block package_metadata_fields_url %}
+    {{ form.input('url', label=_('Source'), id='field-url', placeholder=_('http://example.com/dataset.json'), value=data.url, error=errors.url, classes=['control-medium']) }}
+  {% endblock %}
+
+  {% block package_metadata_fields_version %}
+    {{ form.input('version', label=_('Version'), id='field-version', placeholder=_('1.0'), value=data.version, error=errors.version, classes=['control-medium']) }}
+  {% endblock %}
+
+  {% block package_metadata_author %}
+    {{ form.input('author', label=_('Author'), id='field-author', placeholder=_('Joe Bloggs'), value=data.author, error=errors.author, classes=['control-medium']) }}
+
+    {{ form.input('author_email', label=_('Author Email'), id='field-author-email', placeholder=_('joe@example.com'), value=data.author_email, error=errors.author_email, classes=['control-medium']) }}
+  {% endblock %}
+
+  {% block package_metadata_fields_maintainer %}
+    {{ form.input('maintainer', label=_('Maintainer'), id='field-maintainer', placeholder=_('Joe Bloggs'), value=data.maintainer, error=errors.maintainer, classes=['control-medium']) }}
+
+    {{ form.input('maintainer_email', label=_('Maintainer Email'), id='field-maintainer-email', placeholder=_('joe@example.com'), value=data.maintainer_email, error=errors.maintainer_email, classes=['control-medium']) }}
+  {% endblock %}
+  
+{% endblock %}

@@ -1,0 +1,102 @@
+{% ckan_extends %}
+
+{% block extras %}
+    <tr>
+      <th scope="row" class="dataset-label">{{ _("Visibility") }}</th>  
+      {% if pkg_dict.private %}
+      <td class="dataset-details">{{ _('Private') }}</td>
+      {% else %}
+      <td class="dataset-details">{{ _('Public') }}</td>
+      {% endif %}
+    </tr>
+  {% if pkg_dict.years %}
+    <tr>
+      <th scope="row" class="dataset-label">{{ _("Year") }}</th>
+      <td class="dataset-details">
+        {% for year in pkg_dict.years %}
+          {{ year }}  <br>
+        {% endfor %}
+      </td>
+    </tr>
+  {% endif %}
+  {% if pkg_dict.topics %}
+    <tr>
+      <th scope="row" class="dataset-label">{{ _("Topics") }}</th>
+      <td class="dataset-details">
+        {% for tp in pkg_dict.topics %}
+          {{ tp }}  <br>
+        {% endfor %}
+      </td>
+    </tr>
+  {% endif %}
+  {% if pkg_dict.units %}
+    <tr>
+      <th scope="row" class="dataset-label">{{ _("Units") }}</th>
+      <td class="dataset-details">
+        {% for unit in pkg_dict.units %}
+          {{ unit }}  <br>
+        {% endfor %}
+      </td>
+    </tr>
+  {% endif %}
+  {% if pkg_dict.area_types %}
+    <tr>
+      <th scope="row" class="dataset-label">{{ _("Geographic Layer") }}</th>
+      <td class="dataset-details">
+        {% for at in pkg_dict.area_types %}
+          {{ at }}  <br>
+        {% endfor %}
+      </td>
+    </tr>
+  {% endif %}
+  {% if pkg_dict.frequency %}
+    <tr>
+      <th scope="row" class="dataset-label">{{ _("Frequency") }}</th>
+      <td class="dataset-details">
+        {% for fq in pkg_dict.frequency %}
+          {{ fq }}  <br>
+        {% endfor %}
+      </td>
+    </tr>
+  {% endif %}
+  {% if pkg_dict.doi %}
+    <tr>
+      <th scope="row" class="dataset-label">{{ _("DOI") }}</th>
+      <td class="dataset-details">
+          <a href="{{ pkg_dict.doi }}" target="_blank" rel="noopener noreferrer">{{ pkg_dict.doi }}</a>
+      </td>
+    </tr>
+  {% endif %}
+  {% if pkg_dict.citation %}
+    <tr>
+      <th scope="row" class="dataset-label">{{ _("Citation") }}</th>
+      <td class="dataset-details">
+          {{ pkg_dict.citation }}
+      </td>
+    </tr>
+  {% endif %}
+  {% if pkg_dict.geographic_coverage %}
+    <tr>
+      <th scope="row" class="dataset-label">{{ _("Geographical Coverage Location") }}</th>
+      <td class="dataset-details">
+          {{ pkg_dict.geographic_coverage }}
+      </td>
+    </tr>
+  {% endif %}
+  {% if pkg_dict.granularity %}
+    <tr>
+      <th scope="row" class="dataset-label">{{ _("Granularity") }}</th>
+      <td class="dataset-details">
+          {{ pkg_dict.granularity }}
+      </td>
+    </tr>
+  {% endif %}
+  {% if pkg_dict.geographic_spatial %}
+    <tr>
+      <th scope="row" class="dataset-label">{{ _("Geographic Spatial data") }}</th>
+      <td class="dataset-details">
+          {{ pkg_dict.geographic_spatial }}
+      </td>
+    </tr>
+  {% endif %}
+{% endblock %}

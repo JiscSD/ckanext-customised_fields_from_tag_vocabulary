@@ -1,0 +1,14 @@
+# customised_fields_from_tag_vocabulary-js:
+#   filter: rjsmin
+#   output: ckanext-customised_fields_from_tag_vocabulary/%(version)s-customised_fields_from_tag_vocabulary.js
+#   contents:
+#     - js/customised_fields_from_tag_vocabulary.js
+#   extra:
+#     preload:
+#       - base/main
+
+# customised_fields_from_tag_vocabulary-css:
+#   filter: cssrewrite
+#   output: ckanext-customised_fields_from_tag_vocabulary/%(version)s-customised_fields_from_tag_vocabulary.css
+#   contents:
+#     - css/customised_fields_from_tag_vocabulary.css

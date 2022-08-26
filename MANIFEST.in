@@ -1,0 +1,5 @@
+include README.rst
+include LICENSE
+include requirements.txt
+recursive-include ckanext/customised_fields_from_tag_vocabulary *.html *.json *.js *.less *.css *.mo *.yml
+recursive-include ckanext/customised_fields_from_tag_vocabulary/migration *.ini *.py *.mako
