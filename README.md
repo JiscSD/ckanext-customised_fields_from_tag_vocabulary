@@ -1,4 +1,4 @@
-[![Tests](https://github.com//ckanext-customised_fields_from_tag_vocabulary/workflows/Tests/badge.svg?branch=main)](https://github.com//ckanext-customised_fields_from_tag_vocabulary/actions)
+[![Tests](https://github.com/JiscSD/ckanext-customised_fields_from_tag_vocabulary/workflows/Tests/badge.svg?branch=main)](https://github.com/JiscSD/ckanext-customised_fields_from_tag_vocabulary/actions)
 
 # ckanext-customised_fields_from_tag_vocabulary
 
@@ -120,4 +120,4 @@ If ckanext-customised_fields_from_tag_vocabulary should be available on PyPI you
 
 ## License
 
-[AGPL](https://www.gnu.org/licenses/agpl-3.0.en.html)
+[MIT](https://opensource.org/licenses/MIT)
