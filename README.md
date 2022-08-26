@@ -43,7 +43,7 @@ To install ckanext-customised_fields_from_tag_vocabulary:
 
 2. Clone the source and install it on the virtualenv
 
-    git clone https://github.com//ckanext-customised_fields_from_tag_vocabulary.git
+    git clone https://github.com/JiscSD/ckanext-customised_fields_from_tag_vocabulary.git
     cd ckanext-customised_fields_from_tag_vocabulary
     pip install -e .
 	pip install -r requirements.txt
