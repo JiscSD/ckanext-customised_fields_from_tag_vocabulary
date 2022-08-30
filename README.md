@@ -30,7 +30,9 @@ To install ckanext-customised_fields_from_tag_vocabulary:
      . /usr/lib/ckan/default/bin/activate
 ```
 2. Clone the source and install it on the virtualenv
+
 (make sure the pip here is using the CKAN virtual environment pip, instead of the system pip)
+
 (to ensure the pip, one can specifically denoted the pip by using the pip under ckan folder)
 
 ```
