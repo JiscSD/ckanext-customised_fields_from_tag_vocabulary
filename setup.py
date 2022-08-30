@@ -23,7 +23,7 @@ setup(
     long_description_content_type="text/markdown",
 
     # The project's main homepage.
-    url='https://github.com//ckanext-customised_fields_from_tag_vocabulary',
+    url='https://github.com/JiscSD/ckanext-customised_fields_from_tag_vocabulary',
 
     # Author details
     author='''Paul Chau''',
