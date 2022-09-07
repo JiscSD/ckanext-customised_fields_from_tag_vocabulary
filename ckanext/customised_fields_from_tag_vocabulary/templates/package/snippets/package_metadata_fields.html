@@ -14,7 +14,7 @@
 
     {{ form.input('geographic_spatial', label=_('Geographic Spatial data'), id='field-geographic_spatial', placeholder=_(''), value=data.geographic_spatial, error=errors.geographic_spatial, classes=['control-medium']) }}
 
-    <!-- {{ form.input('wkt', label=_('WKT'), id='field-wkt', placeholder=_(''), value=data.wkt, error=errors.wkt, classes=['control-medium']) }} -->
+    {{ form.textarea('wkt', label=_('Geometry data for display (WKT)'), id='field-wkt', placeholder=_(''), value=data.wkt, error=errors.wkt, classes=['control-medium']) }}
 
   {% endblock %}
 
