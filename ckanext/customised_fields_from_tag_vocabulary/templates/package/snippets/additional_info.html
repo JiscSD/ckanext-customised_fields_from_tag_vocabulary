@@ -14,7 +14,7 @@
       <th scope="row" class="dataset-label">{{ _("Year") }}</th>
       <td class="dataset-details">
         {% for year in pkg_dict.years %}
-          {{ year }}  <br>
+        <a href="/dataset/?vocab_Year={{year}}">{{ year }}</a>  <br>
         {% endfor %}
       </td>
     </tr>
@@ -24,7 +24,7 @@
       <th scope="row" class="dataset-label">{{ _("Topics") }}</th>
       <td class="dataset-details">
         {% for tp in pkg_dict.topics %}
-          {{ tp }}  <br>
+          <a href="/dataset/?vocab_Topics={{tp}}">{{ tp }}</a>  <br>
         {% endfor %}
       </td>
     </tr>
@@ -34,7 +34,7 @@
       <th scope="row" class="dataset-label">{{ _("Units") }}</th>
       <td class="dataset-details">
         {% for unit in pkg_dict.units %}
-          {{ unit }}  <br>
+        <a href="/dataset/?vocab_Unit={{unit}}">{{ unit }}</a>  <br>
         {% endfor %}
       </td>
     </tr>
@@ -44,7 +44,7 @@
       <th scope="row" class="dataset-label">{{ _("Geographic Layer") }}</th>
       <td class="dataset-details">
         {% for at in pkg_dict.area_types %}
-          {{ at }}  <br>
+        <a href="/dataset/?vocab_Area_type={{at}}">{{ at }}</a>  <br>
         {% endfor %}
       </td>
     </tr>
