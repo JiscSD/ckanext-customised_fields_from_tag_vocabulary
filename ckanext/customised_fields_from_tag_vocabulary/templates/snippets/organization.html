@@ -1,0 +1,24 @@
+{% ckan_extends %}
+
+{% block heading %}
+<h1 class="heading">
+    
+    {% if organization.state == 'deleted' %}
+        {{ organization.title or organization.name }}[{{ _('Deleted') }}]
+    {% else %}
+        <a href="/organization/{{organization.name}}">{{ organization.title or organization.name }}</a>
+    {% endif %}
+</h1>
+{% endblock %}
+{% block description %}
+    {% if organization.description %}
+        <p class="description">
+          {{ h.markdown_extract(organization.description, 180) }}
+        </p>
+        <p class="read-more">
+          {% link_for _('read more'), controller='organization', action='about', id=organization.name %}
+        </p>
+    {% else %}
+        <p class="empty"></p>
+    {% endif %}
+{% endblock %}
