@@ -10,6 +10,7 @@ from flask import render_template
 from ckan.plugins.toolkit import Invalid
 
 log = logging.getLogger(__name__)
+facet_order_by_display_name = ['Year']
 
 def get_vocab_tag_list(vocab):
     try:
@@ -23,6 +24,12 @@ def get_vocab_tag_list(vocab):
         return agg_list.items()
     except toolkit.ObjectNotFound:
         return None
+
+def reorder_facet(title, facet):
+    if title in facet_order_by_display_name:
+        sfacet = sorted(facet, key=lambda d: d['display_name'], reverse=True)
+        return sfacet 
+    return facet
 
 class CustomisedFieldsFromTagVocabularyPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     plugins.implements(plugins.IConfigurer)
@@ -107,7 +114,7 @@ class CustomisedFieldsFromTagVocabularyPlugin(plugins.SingletonPlugin, toolkit.D
     # ITemplateHelpers
 
     def get_helpers(self):
-        return {'get_vocab_tag_list': get_vocab_tag_list}
+        return {'get_vocab_tag_list': get_vocab_tag_list, 'reorder_facet': reorder_facet}
 
     def is_fallback(self):
         # Return True to register this plugin as the default handler for
