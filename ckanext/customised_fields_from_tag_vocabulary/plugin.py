@@ -77,30 +77,30 @@ class CustomisedFieldsFromTagVocabularyPlugin(plugins.SingletonPlugin, toolkit.D
     def delete(self, entity):
         pass
 
-    def before_search(self, search_params):
+    def before_dataset_search(self, search_params):
         return search_params
 
-    def after_search(self, search_results, search_params):
+    def after_dataset_search(self, search_results, search_params):
         return search_results
 
-    def before_index(self, data_dict):
+    def before_dataset_index(self, data_dict):
         data_dict.pop('wkt', None)
         data_dict.pop('extras_wkt', None)
         return data_dict
 
-    def before_view(self, pkg_dict):
+    def before_dataset_view(self, pkg_dict):
         return pkg_dict
 
-    def after_create(self, context, data_dict):
+    def after_dataset_create(self, context, data_dict):
         return data_dict
 
-    def after_update(self, context, data_dict):
+    def after_dataset_update(self, context, data_dict):
         return data_dict
 
-    def after_delete(self, context, data_dict):
+    def after_dataset_delete(self, context, data_dict):
         return data_dict
 
-    def after_show(self, context, data_dict):
+    def after_datset_show(self, context, data_dict):
         return data_dict
 
     # IConfigurer
