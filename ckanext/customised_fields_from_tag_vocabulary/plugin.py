@@ -108,7 +108,7 @@ class CustomisedFieldsFromTagVocabularyPlugin(plugins.SingletonPlugin, toolkit.D
     def update_config(self, _config):
         toolkit.add_template_directory(_config, 'templates')
         toolkit.add_public_directory(_config, 'public')
-        toolkit.add_resource('fanstatic',
+        toolkit.add_resource('assets',
             'customised_fields_from_tag_vocabulary')
 
     # ITemplateHelpers
