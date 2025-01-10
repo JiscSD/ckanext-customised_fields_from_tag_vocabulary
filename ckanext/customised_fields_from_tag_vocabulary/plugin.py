@@ -100,7 +100,7 @@ class CustomisedFieldsFromTagVocabularyPlugin(plugins.SingletonPlugin, toolkit.D
     def after_dataset_delete(self, context, data_dict):
         return data_dict
 
-    def after_datset_show(self, context, data_dict):
+    def after_dataset_show(self, context, data_dict):
         return data_dict
 
     # IConfigurer
