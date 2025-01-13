@@ -2,7 +2,7 @@
 
 {% block heading %}
 <h1 class="heading">
-    
+
     {% if organization.state == 'deleted' %}
         {{ organization.title or organization.name }}[{{ _('Deleted') }}]
     {% else %}
