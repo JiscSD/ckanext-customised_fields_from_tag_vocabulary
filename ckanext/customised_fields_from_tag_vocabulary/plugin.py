@@ -46,7 +46,8 @@ class CustomisedFieldsFromTagVocabularyPlugin(plugins.SingletonPlugin, toolkit.D
         facets_dict['vocab_Topics'] = plugins.toolkit._(u'Topics')
         facets_dict['vocab_Unit'] = plugins.toolkit._(u'Unit')
         facets_dict["vocab_Area_type"] = plugins.toolkit._(u'Area Type')
-        del facets_dict['groups']
+        if 'groups' in facets_dict:
+            del facets_dict['groups']
 
         return facets_dict
 
